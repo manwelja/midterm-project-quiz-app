@@ -10,10 +10,10 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
+    db.query(`SELECT quizzes.*, users.first_name FROM quizzes JOIN users ON (quizzes.owner_id = users.id);`)
       .then(data => {
-        const users = data.rows;
-        res.json({users});
+        const quizzes = data.rows;
+        res.render("index", {quizzes: quizzes}); //res.json({ users });
       })
       .catch(err => {
         res

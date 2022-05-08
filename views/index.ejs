@@ -54,20 +54,21 @@
     </nav>
 
     <div class="quiz-container">
+      <% for(let quiz of quizzes) { %>
       <div class="quiz-box">
         <div class="left-box">
-          <div class="quiz-name">Quiz Name</div>
-          <div class="quiz-creator">Created By: Jen and Mo</div>
-          <img class="quiz-image" src="https://www.infoplease.com/sites/infoplease.com/files/2022-02/quiz-time.jpg">
+          <div class="quiz-name"><td><%= quiz.title%></td></div>
+          <div class="quiz-creator">Created By: <%= quiz.first_name%></div>
+          <img class="quiz-image" src=<%= quiz.image_url %>>
       </div>
-        <div class="quiz-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+        <div class="quiz-description"><%= quiz.description%></div>
         <div class="right-box">
-          <div class="take-quiz-button"><button type="button" id="take-quiz" class="btn btn-outline-primary">Take Quiz</button></div>
+          <div class="take-quiz-button"><button type="button" id="take-quiz" class="btn btn-outline-primary">Take Quiz <%= quiz.id%></button></div>
           <div class="share-quiz-button">Share <i class="fa-solid fa-share-nodes"></i>
           </div>
         </div>
       </div>
-
+      <% } %>
     </div>
 
     <footer></footer>
