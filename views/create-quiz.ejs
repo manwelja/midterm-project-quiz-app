@@ -41,8 +41,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap" rel="stylesheet">
 
-    <title>Quizzy</title>
+    <title>Create Quiz</title>
   </head>
+
   <body class="home-body">
     <nav class="nav-bar">
       <div class="nav-buttons">
@@ -53,21 +54,56 @@
       <div class="user-login-logout">Login/Logout/Register</div>
     </nav>
 
-    <div class="quiz-container">
-      <div class="quiz-box">
-        <div class="left-box">
-          <div class="quiz-name">Quiz Name</div>
-          <div class="quiz-creator">Created By: Jen and Mo</div>
-          <img class="quiz-image" src="https://www.infoplease.com/sites/infoplease.com/files/2022-02/quiz-time.jpg">
-      </div>
-        <div class="quiz-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-        <div class="right-box">
-          <div class="take-quiz-button"><button type="button" id="take-quiz" class="btn btn-outline-primary">Take Quiz</button></div>
-          <div class="share-quiz-button">Share <i class="fa-solid fa-share-nodes"></i>
-          </div>
+    <header class="page-title">
+      <div>Create A New Quiz:</div>
+    </header>
+    <div class="creation-container">
+      <div class="meta-quiz-info">
+        <div class="quiz-title-descrip">
+        <form id="quiz-name">
+          <textarea name="text" id="quiz-title-text" placeholder="Quiz Title..."></textarea>
+        </form>
+        <form id="quiz-description">
+          <textarea name="text" id="quiz-descrip-text" placeholder="Enter a description for your quiz..."></textarea>
+        </form>
         </div>
+        <select name="private" id="privacy-toggle">
+          <option value="choice" disabled selected hidden>Select Privacy Preference...</option>
+          <option value="public">Public (default)</option>
+          <option value="private">Private</option>
+        </select>
       </div>
-
+        <div class="question-indiv">
+          <div class="question-lefhand">
+            <div class="question-number">Question #1</div>
+            <form id="question-descrip">
+              <textarea name="text" id="question-text" placeholder="Write your question here..."></textarea>
+            </form>
+          </div>
+          <div class="question-options">
+            <form>
+              <textarea name="text" id="question-text" placeholder="Fill in option A..."></textarea>
+            </form>
+            <form>
+              <textarea name="text" id="question-text" placeholder="Fill in option B..."></textarea>
+            </form>
+            <form>
+              <textarea name="text" id="question-text" placeholder="Fill in option C..."></textarea>
+            </form>
+            <form>
+              <textarea name="text" id="question-text" placeholder="Fill in option D..."></textarea>
+            </form>
+          </div>
+          <div class="right-question">
+            <select name="correct-answer" id="answer-toggle" placeholder="Correct Answer (A-D)">
+              <option value="choice" disabled selected hidden>Correct Answer (A-D)...</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+            </select>
+          </div>
+          </div>
     </div>
 
     <footer></footer>
