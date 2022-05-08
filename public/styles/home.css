@@ -1,0 +1,124 @@
+body {
+  font-size: 24px;
+  margin: 0;
+  font-family: 'Roboto Flex', sans-serif;
+  background-color: whitesmoke;
+}
+
+.nav-bar {
+  background-color: #00b5ac;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  color: whitesmoke;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.quiz-container {
+  width: 80%;
+  height: 100vh;
+}
+
+.app-title {
+  padding-top: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.home-button {
+  padding: 1rem;
+}
+
+.user-login-logout {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem 1rem 1rem;
+}
+
+.create-quiz {
+  padding: 1rem;
+}
+
+.home-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quiz-pic {
+  width: 20%;
+  margin-top: 0.25rem;
+}
+
+.quiz-box {
+  margin: 2rem 1rem;
+  display: flex;
+  border-radius: 25px;
+  justify-content: space-between;
+  padding: 0.25rem;
+  border: 2px solid #808080;
+}
+
+.quiz-description {
+  display: flex;
+  width: 50%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 18px;
+  align-items: center;
+}
+
+.right-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.75rem;
+}
+
+.quiz-image {
+  width: 100px;
+}
+
+.left-box {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-name {
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.quiz-creator {
+  font-size: 16px;
+  margin-bottom: 0.25rem
+}
+
+.share-quiz-button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #00b5ac;
+  border-color: #00b5ac;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* I couldn't figure out how to change the take-quiz button from bootstrap haha */
+
+/* .btn #take-quiz{
+  color: #00b5ac;
+  border-color: #00b5ac;
+  font-size: 18px;
+  font-weight: 600;
+} */
+
+/* //btn-outline-primary */
