@@ -80,17 +80,18 @@
       <div>Create A New Quiz:</div>
     </header>
     <div class="creation-container">
-      <form class="quiz-form">
+      <form class="quiz-form" method="post">
         <div class="meta-quiz-info">
           <div class="meta-quiz-left">
             <textarea name="quiz-name" id="quiz-title-text" placeholder="Quiz Title..."></textarea>
             <textarea name="quiz-description" id="quiz-descrip-text" placeholder="Enter a description for your quiz..."></textarea>
             <textarea name="img-url-text" id="img-url-text" placeholder="Enter the display photo URL for your quiz..."></textarea>
           </div>
+          <div style="visibility:hidden"><textarea name="quiz-owner" id="quiz-owner" style="visibility:hidden"><%= ownerId %></textarea></div>
           <div class="privacy-option">
-            <input type="radio" id="public" name="privacy-setting" value="Public">
+            <input type="radio" id="public" name="privacy-setting" value="false" checked="checked">
             <label for="public">Public</label><br>
-            <input type="radio" id="private" name="privacy-setting" value="Private">
+            <input type="radio" id="private" name="privacy-setting" value="true">
             <label for="private">Private</label>
           </div>
         </div>
@@ -100,7 +101,7 @@
               <div class="question-number">Question #1</div>
               <textarea name="question-text" id="question-text" placeholder="Write your question here..."></textarea>
               <select name="correct-answer" id="answer-toggle" placeholder="Correct Answer (A-D)">
-                <option value="choice" disabled selected hidden>Correct Answer (A-D)...</option>
+                <option value="choice" disabled selected>Correct Answer (A-D)...</option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -122,7 +123,7 @@
           <button type="button" id="add-question" class="btn btn-outline-primary">Add Another Question</button>
         </div>
         <div class="submit-quiz-button">
-          <button type="button" id="create-quiz" class="btn btn-outline-primary">Create Quiz</button>
+          <button type="submit" id="create-quiz" class="btn btn-outline-primary">Create Quiz</button>
         </div>
       </form>
     </div>
