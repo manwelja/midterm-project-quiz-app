@@ -11,6 +11,7 @@ module.exports = (db) => {
       .then(data => {
         //if the user exists, set a cookie and load the index page
         if (data.rows.length > 0) {
+          console.log(req.body)
           res.cookie("email", data.rows[0].email);
           res.redirect("index");
         } else {
