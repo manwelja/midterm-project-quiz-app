@@ -11,38 +11,48 @@ const saveQuizToDb = function(quizInfo, db) {
 
   return db.query(queryString, values)
     .then((result) => {
-      console.log(quizInfo)
-      //db.reset();
-      // const numQuestions = quizInfo["question-text"].length;
-      // for (let i = 0; i < numQuestions; i++) {
-      //   console.log(quizInfo["question-text"][i])
-      // }
-      //STEP 2 - Save quiz questions to questions table
-      const queryStringQuestions = `
-      INSERT INTO questions (quiz_id, question_number, question_text, correct_answer, question_option_a, question_option_b, question_option_c, question_option_d)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;
-`;
-      const valuesQuestions = [result.rows[0].id, 1, quizInfo["question-text"], quizInfo["correct-answer"], quizInfo["question-a-text"], quizInfo["question-b-text"], quizInfo["iquestion-c-text"], quizInfo["question-d-text"]];
+      //if there are multiple questions, loop through them all and insert each individually
+      if (Array.isArray(quizInfo["question-text"])) {
+        const quizId = result.rows[0].id;
+        const numQuestions = quizInfo["question-text"].length;
+        for (let i = 0; i < numQuestions; i++) {
+          //STEP 2 - Save quiz questions to questions table
+          //note: if privacy-setting is FALSE, quiz is public
+          const queryStringQuestions = `
+            INSERT INTO questions (quiz_id, question_number, question_text, correct_answer, question_option_a, question_option_b, question_option_c, question_option_d)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;
+            `;
 
-      db.query(queryStringQuestions, valuesQuestions)
-        .then((result)=> {
-          console.log("Saving question...");
-        }) .catch((err) => {
-          console.log(err.message);
-        });
+          const valuesQuestions = [quizId, i + 1, quizInfo["question-text"][i], quizInfo["correct-answer"][i], quizInfo["question-a-text"][i], quizInfo["question-b-text"][i], quizInfo["question-c-text"][i], quizInfo["question-d-text"][i]];
+
+          //Run SQL query for each question
+          db.query(queryStringQuestions, valuesQuestions)
+            .then(()=> {
+              console.log("Saving question...");
+            }) .catch((err) => {
+              console.log(err.message);
+            });
+        }
+      } else {
+        //If there is only one questios, insert it into the database
+        const queryStringQuestions = `
+        INSERT INTO questions (quiz_id, question_number, question_text, correct_answer, question_option_a, question_option_b, question_option_c, question_option_d)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;
+        `;
+
+        const valuesQuestions = [quizId, i, quizInfo["question-text"][i], quizInfo["correct-answer"][i], quizInfo["question-a-text"][i], quizInfo["question-b-text"][i], quizInfo["question-c-text"][i], quizInfo["question-d-text"][i]];
+
+        //Run SQL query for each question
+        db.query(queryStringQuestions, valuesQuestions)
+          .then(()=> {
+            console.log("Saving question...");
+          }) .catch((err) => {
+            console.log(err.message);
+          });
+      }
     }) .catch((err2) => {
       console.log(err2.message);
     });
-
-  //if privacy-setting is FALSE, quiz is public
-
-
-  //STEP 2 - Save quiz questions to questions table
-
-  //if privacy-setting is FALSE, quiz is public
-
-
-  //STEP 2 - Save quiz questions to questions table
 };
 
 
