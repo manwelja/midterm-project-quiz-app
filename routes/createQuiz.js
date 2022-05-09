@@ -11,9 +11,9 @@ const saveQuizToDb = function(quizInfo, db) {
 
   return db.query(queryString, values)
     .then((result) => {
+      const quizId = result.rows[0].id;
       //if there are multiple questions, loop through them all and insert each individually
       if (Array.isArray(quizInfo["question-text"])) {
-        const quizId = result.rows[0].id;
         const numQuestions = quizInfo["question-text"].length;
         for (let i = 0; i < numQuestions; i++) {
           //STEP 2 - Save quiz questions to questions table
@@ -40,7 +40,7 @@ const saveQuizToDb = function(quizInfo, db) {
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;
         `;
 
-        const valuesQuestions = [quizId, i, quizInfo["question-text"][i], quizInfo["correct-answer"][i], quizInfo["question-a-text"][i], quizInfo["question-b-text"][i], quizInfo["question-c-text"][i], quizInfo["question-d-text"][i]];
+        const valuesQuestions = [quizId, 1, quizInfo["question-text"], quizInfo["correct-answer"], quizInfo["question-a-text"], quizInfo["question-b-text"], quizInfo["question-c-text"], quizInfo["question-d-text"]];
 
         //Run SQL query for each question
         db.query(queryStringQuestions, valuesQuestions)
@@ -52,26 +52,6 @@ const saveQuizToDb = function(quizInfo, db) {
       }
     }) .catch((err2) => {
       console.log(err2.message);
-    });
-};
-
-
-const launchCreateQuiz = function(userEmail, db, res) {
-
-  const queryString = `
-     SELECT * FROM users WHERE email = $1;
-  `;
-  console.log("in getUserID")
-  db.query(queryString, [userEmail])
-    .then((result) => {
-    //If no errors were encountered add the new user to the database
-      const templateVars = {"ownerId": result.rows[0].id};
-      console.log(templateVars);
-      return res.render("createQuiz", templateVars);
-    //  return result.rows[0];
-    })
-    .catch((err) => {
-      console.log(err.message);
     });
 };
 
@@ -96,7 +76,6 @@ module.exports = (db) => {
     //call function for error checking here
 
     saveQuizToDb(req.body, db);
-    console.log("AFTER saveQuizToDB")
     res.redirect("index");
 
   });
