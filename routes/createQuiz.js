@@ -2,7 +2,6 @@ const express = require('express');
 const router  = express.Router();
 
 const saveQuizToDb = function(quizInfo, db) {
-  console.log("quizINfo", quizInfo);
   //STEP 1 - Save quiz META info to quizzes table
   const queryString = `
      INSERT INTO quizzes (owner_id, title, description, image_url, is_private)
@@ -12,10 +11,27 @@ const saveQuizToDb = function(quizInfo, db) {
 
   return db.query(queryString, values)
     .then((result) => {
-      return result;
-    })
-    .catch((err) => {
-      console.log(err.message);
+      console.log(quizInfo)
+      //db.reset();
+      // const numQuestions = quizInfo["question-text"].length;
+      // for (let i = 0; i < numQuestions; i++) {
+      //   console.log(quizInfo["question-text"][i])
+      // }
+      //STEP 2 - Save quiz questions to questions table
+      const queryStringQuestions = `
+      INSERT INTO questions (quiz_id, question_number, question_text, correct_answer, question_option_a, question_option_b, question_option_c, question_option_d)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *;
+`;
+      const valuesQuestions = [result.rows[0].id, 1, quizInfo["question-text"], quizInfo["correct-answer"], quizInfo["question-a-text"], quizInfo["question-b-text"], quizInfo["iquestion-c-text"], quizInfo["question-d-text"]];
+
+      db.query(queryStringQuestions, valuesQuestions)
+        .then((result)=> {
+          console.log("Saving question...");
+        }) .catch((err) => {
+          console.log(err.message);
+        });
+    }) .catch((err2) => {
+      console.log(err2.message);
     });
 
   //if privacy-setting is FALSE, quiz is public
@@ -71,7 +87,7 @@ module.exports = (db) => {
 
     saveQuizToDb(req.body, db);
     console.log("AFTER saveQuizToDB")
-    //res.redirect("index");
+    res.redirect("index");
 
   });
   return router;
