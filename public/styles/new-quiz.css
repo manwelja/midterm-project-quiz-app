@@ -25,26 +25,31 @@
 }
 
 #quiz-descrip-text {
-  display: flex;
-  width: 30rem;
-  height: 3rem;
-  border: none;
+  background-color: antiquewhite;
   margin: 0.5rem;
-  background-color: transparent;
+  width: 500px;
+  height: 50px;
 }
 
 #quiz-title-text {
-  display: flex;
-  width: 30rem;
-  height: 2rem;
-  border: none;
+  background-color: antiquewhite;
   margin: 0.5rem;
-  background-color: transparent;
+  height: 2rem;
 }
 
-#privacy-toggle {
-  display:flex;
-  height: 2rem;
+#img-url-text {
+  background-color: antiquewhite;
+  margin: 0.5rem;
+  height: 50px;
+}
+
+.meta-quiz-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.privacy-option {
+  padding: 1rem;
 }
 
 .question-indiv {
@@ -52,10 +57,32 @@
   margin: 2rem 0rem;
   border: solid 2px;
   padding: 1rem;
+  flex-direction: column;
 }
 
-.question-number {
+.question-top {
   display: flex;
-  border: solid 2px;
-  width: 100%;
+  justify-content: space-between;
+}
+
+.question-options {
+  display: flex;
+  flex-direction: column;
+}
+
+#question-text {
+  overflow: auto;
+  resize: vertical;
+  width: 800px;
+  height: 100px;
+}
+
+#answer-toggle {
+  height: 30px;
+}
+
+.question-each-option {
+  height: 30px;
+  font-size: 20px;
+  margin: 0.2rem;
 }
