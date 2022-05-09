@@ -83,7 +83,7 @@
       <h4 class="quiz-title"><%=questions[0].title%></h4>
       <div class="quiz-descrip"><%=questions[0].description%></div>
     </div>
-    <form>
+    <form method="post">
     <div class="questions-container">
       <% for(let question of questions) { %>
       <div class="indiv-question">
@@ -91,15 +91,15 @@
         <div class="question-descrip"><%=question.question_text%></div>
         <div class="answer-select">
           <div class="opta-optb">
-            <input type="radio" id="option-a" name="answer-option" value="A">
+            <input type="radio" id="option-a" name="answer-option-<%=question.question_number%>" value="a">
             <label for="option-a">A</label><div class="option-text"><%=question.question_option_a%></div><br>
-            <input type="radio" id="option-b" name="answer-option" value="B">
+            <input type="radio" id="option-b" name="answer-option-<%=question.question_number%>" value="b">
             <label for="option-b">B</label><div class="option-text"><%=question.question_option_b%></div><br>
           </div>
           <div class="optc-optd">
-            <input type="radio" id="option-c" name="answer-option" value="C">
+            <input type="radio" id="option-c" name="answer-option-<%=question.question_number%>" value="c">
             <label for="option-c">C</label><div class="option-text"><%=question.question_option_c%></div><br>
-            <input type="radio" id="option-d" name="answer-option" value="D">
+            <input type="radio" id="option-d" name="answer-option-<%=question.question_number%>" value="d">
             <label for="option-d">D</label><div class="option-text"><%=question.question_option_d%></div>
           </div>
         </div>
@@ -108,7 +108,7 @@
     </div>
 
       <div class="submit-answers-button">
-        <button type="button" id="submit-quiz-answers" class="btn btn-outline-primary">Submit Answers</button>
+        <button type="submit" id="submit-quiz-answers" class="btn btn-outline-primary">Submit Answers</button>
       </div>
     </form>
 
