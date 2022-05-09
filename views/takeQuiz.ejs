@@ -1,12 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body> Hello World // Testing Take Quix
+  <head>
 
+    <!-- External JS-->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+
+    <!--App JS-->
+    <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Add Question JS-->
+    <script type="text/javascript" src="/scripts/addQuestion.js"></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- External CSS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+
+    <!-- App CSS-->
+    <link rel="stylesheet" href="/styles/take-quiz.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/home.css" type="text/css" />
+
+    <!-- Imported Fonts From Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap" rel="stylesheet">
+
+    <title>Create Quiz</title>
+  </head>
+
+
+<body>
+  <nav class="nav-bar">
+    <div class="nav-buttons">
+      <div class="home-button">Home</i></div>
+      <div class="create-quiz">Create A Quiz</div>
+    </div>
+    <div class="app-title">Quizzy</div>
+    <div class="user-login-logout">Login/Logout/Register</div>
+  </nav>
+
+  <div class="q-container">
+    <div class="top-container">
+      <h4 class="take-quiz-callout">Take Quiz</h4>
+      <h4 class="quiz-title">Quiz Title</h4>
+      <div class="quiz-descrip">This is a quiz that you're going to take...</div>
+    </div>
+    <form>
+    <div class="questions-container">
+      <div class="indiv-question">
+        <div class="question-numb">Question Number</div>
+        <div class="question-descrip">What's the capital of X?</div>
+        <div class="answer-select">
+          <div class="opta-optb">
+            <input type="radio" id="option-a" name="answer-option" value="A">
+            <label for="option-a">A</label><div class="option-text">Option A Text</div><br>
+            <input type="radio" id="option-b" name="answer-option" value="B">
+            <label for="option-b">B</label><div class="option-text">Option B Text</div><br>
+          </div>
+          <div class="optc-optd">
+            <input type="radio" id="option-c" name="answer-option" value="C">
+            <label for="option-c">C</label><div class="option-text">Option C Text</div><br>
+            <input type="radio" id="option-d" name="answer-option" value="D">
+            <label for="option-d">D</label><div class="option-text">Option D Text</div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+      <div class="submit-answers-button">
+        <button type="button" id="submit-quiz-answers" class="btn btn-outline-primary">Submit Answers</button>
+      </div>
+    </form>
+
+  </div>
 </body>
 </html>
