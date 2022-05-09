@@ -9,7 +9,7 @@ CREATE TABLE users (
   name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  join_date DATE NOT NULL
+  join_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE quizzes (
