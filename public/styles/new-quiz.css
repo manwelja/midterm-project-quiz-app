@@ -6,8 +6,10 @@
 
 .meta-quiz-info {
   display: flex;
-  justify-content: space-between;
-  border: solid 2px;
+  justify-content: flex-start;
+  border: 2px solid #808080;
+  border-radius: 25px;
+  padding: 1rem;
 }
 
 .page-title {
@@ -25,27 +27,30 @@
 }
 
 #quiz-descrip-text {
-  background-color: antiquewhite;
   margin: 0.5rem;
-  width: 500px;
-  height: 50px;
+  height: 5.5rem;
 }
 
 #quiz-title-text {
-  background-color: antiquewhite;
   margin: 0.5rem;
-  height: 2rem;
+  height: 2.5rem;
 }
 
 #img-url-text {
-  background-color: antiquewhite;
   margin: 0.5rem;
-  height: 50px;
+  height: 2.5rem;
 }
 
 .meta-quiz-left {
   display: flex;
   flex-direction: column;
+  width: 70%;
+}
+
+.meta-quiz-left textarea {
+  background-color: white;
+  border: none;
+  width: 100%;
 }
 
 .privacy-option {
@@ -55,9 +60,16 @@
 .question-indiv {
   display: flex;
   margin: 2rem 0rem;
-  border: solid 2px;
   padding: 1rem;
   flex-direction: column;
+  border: 2px solid #808080;
+  border-radius: 25px;
+}
+
+.question-indiv textarea {
+  border: none;
+  margin: 0.5rem;
+  width: 71%;
 }
 
 .question-top {
@@ -73,8 +85,8 @@
 #question-text {
   overflow: auto;
   resize: vertical;
-  width: 800px;
-  height: 100px;
+  width: 600px;
+  height: 5.5rem;
 }
 
 #answer-toggle {
@@ -85,4 +97,30 @@
   height: 30px;
   font-size: 20px;
   margin: 0.2rem;
+}
+
+.hidden-vis {
+  visibility: hidden;
+  width: 0;
+}
+
+.privacy-title {
+  padding-left: 3rem;
+}
+
+.submit-quiz-button {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  font-weight: 600;
+  padding-bottom: 4rem;
+}
+
+#create-quiz {
+  font-size: 34px;
+}
+
+#answer-toggle {
+  border: none;
+  margin: 2rem 0.5rem 0.5rem 0.5rem;
 }

@@ -87,12 +87,15 @@
             <textarea name="quiz-description" id="quiz-descrip-text" placeholder="Enter a description for your quiz..."></textarea>
             <textarea name="img-url-text" id="img-url-text" placeholder="Enter the display photo URL for your quiz..."></textarea>
           </div>
-          <div style="visibility:hidden"><textarea name="quiz-owner" id="quiz-owner" style="visibility:hidden"><%= ownerId %></textarea></div>
-          <div class="privacy-option">
-            <input type="radio" id="public" name="privacy-setting" value="false" checked="checked">
-            <label for="public">Public</label><br>
-            <input type="radio" id="private" name="privacy-setting" value="true">
-            <label for="private">Private</label>
+          <div class="hidden-vis" style="visibility:hidden"><textarea name="quiz-owner" id="quiz-owner" style="visibility:hidden"><%= ownerId %></textarea></div>
+          <div class="meta-right">
+            <div class="privacy-title">Visibility:</div>
+            <div class="privacy-option">
+              <input type="radio" id="public" name="privacy-setting" value="false" checked="checked">
+              <label for="public">Public</label><br>
+              <input type="radio" id="private" name="privacy-setting" value="true">
+              <label for="private">Private</label>
+            </div>
           </div>
         </div>
         <div class="all-questions">
