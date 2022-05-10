@@ -105,8 +105,9 @@
                 <br />
               </div>
 
-              <% if(question.question_option_c) { %>
               <div class="optc-optd">
+              <% if(question.question_option_c) { %>
+              <div class="optc">
                 <input
                   type="radio"
                   id="option-c"
@@ -119,7 +120,7 @@
                 <% } %>
 
                 <% if(question.question_option_d) { %>
-                <div class="optc-optd">
+                <div class="optd">
                 <input
                   type="radio"
                   id="option-d"
@@ -129,6 +130,7 @@
                 <label for="option-d"><%=question.question_option_d%></label>
                 </div>
                 <% } %>
+              </div>
              </div>
             </div>
             <%}%>
