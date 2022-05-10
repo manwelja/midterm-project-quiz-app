@@ -2,3 +2,10 @@ body,
 html {
   margin: 0;
 }
+
+body {
+  font-size: 24px;
+  margin: 0;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: whitesmoke;
+}

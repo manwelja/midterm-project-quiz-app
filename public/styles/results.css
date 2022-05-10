@@ -1,3 +1,10 @@
+body {
+  font-size: 24px;
+  margin: 0;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: whitesmoke;
+}
+
 .results-container {
   display: flex;
   margin-top: 2.7rem;

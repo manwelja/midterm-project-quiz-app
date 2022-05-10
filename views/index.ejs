@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <!-- External JS-->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
@@ -35,16 +34,20 @@
 
     <!-- App CSS-->
     <link rel="stylesheet" href="/styles/home.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav-style.css" type="text/css" />
 
     <!-- Imported Fonts From Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Quizzy</title>
   </head>
   <body class="home-body">
-    <%-  include('partials/_navBar'); %>
+    <%- include('partials/_navBar'); %>
     <div class="quiz-container">
       <% for(let quiz of quizzes) { %>
       <div class="quiz-box">
@@ -52,15 +55,33 @@
           <div class="quiz-name"><td><%= quiz.title%></td></div>
           <div class="quiz-creator">Created By: <%= quiz.name%></div>
           <img class="quiz-image" src=<%= quiz.image_url %>>
-      </div>
+        </div>
         <div class="quiz-description"><%= quiz.description%></div>
         <div class="right-box">
-          <form action = "/takeQuiz/<%= quiz.id %>">
-             <div class="take-quiz-button"><button type="submit" id="take-quiz" class="btn btn-outline-primary">Take Quiz <%= quiz.id%></button></div>
+          <form action="/takeQuiz/<%= quiz.id %>">
+            <div class="take-quiz-button">
+              <button
+                type="submit"
+                id="take-quiz"
+                class="btn btn-outline-primary"
+              >
+                Take Quiz <%= quiz.id%>
+              </button>
+            </div>
           </form>
-          <div class="share-quiz-button-email"><a href="mailto:?Subject=Take my Quiz Please&body=http://localhost:8080/takeQuiz/<%= quiz.id%>">Share </a><i class="fa-solid fa-share-nodes"></i>
-          <div class="share-quiz-button-reddit"><a href="https://reddit.com/submit?url=http://localhost:8080/takeQuiz/<%= quiz.id%>&title=Quizzy" id="reddit" class="share-btn reddit"><i class="fa-brands fa-reddit"></i></a>
-        </div>
+          <div class="share-quiz-button-email">
+            <a
+              href="mailto:?Subject=Take my Quiz Please&body=http://localhost:8080/takeQuiz/<%= quiz.id%>"
+              >Share </a
+            ><i class="fa-solid fa-share-nodes"></i>
+            <div class="share-quiz-button-reddit">
+              <a
+                href="https://reddit.com/submit?url=http://localhost:8080/takeQuiz/<%= quiz.id%>&title=Quizzy"
+                id="reddit"
+                class="share-btn reddit"
+                ><i class="fa-brands fa-reddit"></i
+              ></a>
+            </div>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@ module.exports = (db) => {
         //if the user exists, set a cookie and load the index page
         if (data.rows.length > 0) {
           res.cookie("email", data.rows[0].email);
-          res.redirect("index", 304);
+          res.redirect("index");
         } else {
           //if the user doesn't exist, send them to the error page
           const templateVars = { "userId": req.cookies.email, "errorMessage": "Invalid username" };
