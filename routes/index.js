@@ -17,7 +17,7 @@ module.exports = (db) => {
         db.query(`SELECT quiz_id, ROUND(AVG(score)) AS average, COUNT(*) AS attempts FROM attempts GROUP BY quiz_id;`)
           .then(stats => {
             console.log("stats", stats.rows)
-            const templateVars = {"userId": req.cookies.email, "quizzes": quizzes};
+            const templateVars = {"userId": req.cookies.email, "quizzes": quizzes, "stats": stats.rows};
            res.render("index", templateVars); //res.json({ users });
           })
           .catch((err) => {
