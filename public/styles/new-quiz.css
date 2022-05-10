@@ -6,10 +6,17 @@
 
 .meta-quiz-info {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   border: 2px solid #808080;
   border-radius: 25px;
   padding: 1rem;
+}
+
+.meta-right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0rem 8rem 3rem 0rem;
 }
 
 .page-title {
@@ -18,6 +25,7 @@
   width: 80%;
   font-size: 32px;
   font-weight: 600;
+  margin-top: 1rem;
 }
 
 .question-info {
@@ -54,7 +62,7 @@
 }
 
 .privacy-option {
-  padding: 1rem;
+  padding-left: 3rem;
 }
 
 .question-indiv {
@@ -74,7 +82,7 @@
 
 .question-top {
   display: flex;
-  justify-content: space-between;
+  margin-top: 0.5rem;
 }
 
 .question-options {
@@ -85,8 +93,14 @@
 #question-text {
   overflow: auto;
   resize: vertical;
-  width: 600px;
-  height: 5.5rem;
+  width: 700px;
+  height: 4rem;
+  margin-right: 20rem;
+}
+
+.question-number {
+  margin-right: 1rem;
+  width: 150px;
 }
 
 #answer-toggle {
@@ -110,17 +124,48 @@
 
 .submit-quiz-button {
   display: flex;
-  justify-content: flex-end;
   flex-direction: row;
   font-weight: 600;
-  padding-bottom: 4rem;
-}
-
-#create-quiz {
-  font-size: 34px;
+  margin-top: 2rem;
+  justify-content: flex-end;
 }
 
 #answer-toggle {
   border: none;
-  margin: 2rem 0.5rem 0.5rem 0.5rem;
+  margin: 0.25rem 0.5rem 0.5rem 0.5rem;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+}
+
+#answer-toggle-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+#eye {
+  display: flex;
+  justify-content: center;
+  padding-left: 3rem;
+  color: #00b5ac;
+  font-size: 30px;
+}
+
+#add-question {
+  color: #00b5ac;
+  border-color: #00b5ac;
+  font-size: 24px;
+}
+
+#create-quiz {
+  font-size: 36px;
+  padding: 0.7rem 1rem;
+  background-color: #00b5ac;
+  color: white;
+  border-color: white;
+  border: double;
 }

@@ -82,6 +82,7 @@
           </div>
           <div class="hidden-vis" style="visibility:hidden"><textarea name="quiz-owner" id="quiz-owner" style="visibility:hidden"><%= ownerId %></textarea></div>
           <div class="meta-right">
+            <i class="fa-regular fa-eye" id="eye"></i>
             <div class="privacy-title">Visibility:</div>
             <div class="privacy-option">
               <input type="radio" id="public" name="privacy-setting" value="false" checked="checked">
@@ -96,12 +97,13 @@
             <div class="question-top">
               <div class="question-number">Question #1</div>
               <textarea name="question-text" id="question-text" placeholder="Write your question here..."></textarea>
-              <select name="correct-answer" id="answer-toggle" placeholder="Correct Answer (A-D)">
-                <option value="choice" disabled selected>Correct Answer (A-D)...</option>
+              <label id="answer-toggle-label" for="correct-answer">Set Correct Answer:
+              <select name="correct-answer" id="answer-toggle" label="Correct Answer (A-D)">
                 <option value="a">A</option>
                 <option value="b">B</option>
                 <option value="c">C</option>
                 <option value="d">D</option>
+              </label>
               </select>
             </div>
             <div class="question-options">
