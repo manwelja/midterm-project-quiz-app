@@ -112,6 +112,29 @@ body {
   font-weight: 600;
 }
 
+.share-btn {
+  display: inline-block;
+  color: #ffffff;
+  border: none;
+  padding: 0.1em 0.6em;
+  outline: none;
+  text-align: center;
+  font-size: 0.9em;
+  margin: 0 0.2em;
+}
+
+.share-btn:focus,
+.share-btn:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.share-btn:active {
+  color: #e2e2e2;
+}
+/*.share-btn.reddit      { background: #FFFFFF; }*/
+
+
 /* I couldn't figure out how to change the take-quiz button from bootstrap haha */
 
 /* .btn #take-quiz{
