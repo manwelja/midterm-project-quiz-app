@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <!-- External JS-->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
@@ -56,54 +55,90 @@
 
     <!-- App CSS-->
     <link rel="stylesheet" href="/styles/take-quiz.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/home.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav-style.css" type="text/css" />
 
     <!-- Imported Fonts From Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Create Quiz</title>
   </head>
 
-
-<body>
-  <%-  include('partials/_navBar'); %>
-  <div class="q-container">
-    <div class="top-container">
-      <h4 class="take-quiz-callout">Take Quiz</h4>
-      <h4 class="quiz-title"><%=questions[0].title%></h4>
-      <div class="quiz-descrip"><%=questions[0].description%></div>
-    </div>
-    <form method="post">
-    <div class="questions-container">
-      <% for(let question of questions) { %>
-      <div class="indiv-question">
-        <div class="question-numb">Question <%=question.question_number%></div>
-        <div class="question-descrip"><%=question.question_text%></div>
-        <div class="answer-select">
-          <div class="opta-optb">
-            <input type="radio" id="option-a" name="answer-option-<%=question.question_number%>" value="a">
-            <label for="option-a">A</label><div class="option-text"><%=question.question_option_a%></div><br>
-            <input type="radio" id="option-b" name="answer-option-<%=question.question_number%>" value="b">
-            <label for="option-b">B</label><div class="option-text"><%=question.question_option_b%></div><br>
+  <body>
+    <%- include('partials/_navBar'); %>
+    <div class="q-container">
+      <div class="top-container">
+        <h4 class="take-quiz-callout">Take Quiz</h4>
+        <h4 class="quiz-title"><%=questions[0].title%></h4>
+        <div class="quiz-descrip"><%=questions[0].description%></div>
+      </div>
+      <form method="post">
+        <div class="questions-container">
+          <% for(let question of questions) { %>
+          <div class="indiv-question">
+            <div class="question-numb">
+              Question <%=question.question_number%>
+            </div>
+            <div class="question-descrip"><%=question.question_text%></div>
+            <div class="answer-select">
+              <div class="opta-optb">
+                <input
+                  type="radio"
+                  id="option-a"
+                  name="answer-option-<%=question.question_number%>"
+                  value="a"
+                />
+                <label for="option-a">A</label>
+                <div class="option-text"><%=question.question_option_a%></div>
+                <br />
+                <input
+                  type="radio"
+                  id="option-b"
+                  name="answer-option-<%=question.question_number%>"
+                  value="b"
+                />
+                <label for="option-b">B</label>
+                <div class="option-text"><%=question.question_option_b%></div>
+                <br />
+              </div>
+              <div class="optc-optd">
+                <input
+                  type="radio"
+                  id="option-c"
+                  name="answer-option-<%=question.question_number%>"
+                  value="c"
+                />
+                <label for="option-c">C</label>
+                <div class="option-text"><%=question.question_option_c%></div>
+                <br />
+                <input
+                  type="radio"
+                  id="option-d"
+                  name="answer-option-<%=question.question_number%>"
+                  value="d"
+                />
+                <label for="option-d">D</label>
+                <div class="option-text"><%=question.question_option_d%></div>
+              </div>
+            </div>
           </div>
-          <div class="optc-optd">
-            <input type="radio" id="option-c" name="answer-option-<%=question.question_number%>" value="c">
-            <label for="option-c">C</label><div class="option-text"><%=question.question_option_c%></div><br>
-            <input type="radio" id="option-d" name="answer-option-<%=question.question_number%>" value="d">
-            <label for="option-d">D</label><div class="option-text"><%=question.question_option_d%></div>
-          </div>
+          <%}%>
         </div>
-      </div>
-      <%}%>
+
+        <div class="submit-answers-button">
+          <button
+            type="submit"
+            id="submit-quiz-answers"
+            class="btn btn-outline-primary"
+          >
+            Submit Answers
+          </button>
+        </div>
+      </form>
     </div>
-
-      <div class="submit-answers-button">
-        <button type="submit" id="submit-quiz-answers" class="btn btn-outline-primary">Submit Answers</button>
-      </div>
-    </form>
-
-  </div>
-</body>
+  </body>
 </html>

@@ -1,0 +1,79 @@
+.nav-bar {
+  background-color: #00b5ac;
+  height: 120px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  color: whitesmoke;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.logout {
+  color: whitesmoke;
+  padding: 0.5rem;
+}
+
+.login {
+  color: whitesmoke;
+  padding: 0.5rem;
+}
+
+.app-title {
+  padding-top: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.home-button {
+  padding: 1rem;
+  color: whitesmoke;
+}
+
+.user-login-logout {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem 1rem 1rem;
+}
+
+.create-quiz {
+  padding: 1rem;
+  color: whitesmoke;
+}
+
+.register {
+  color: whitesmoke;
+  padding: 0.5rem;
+}
+
+.register:hover {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+.logout:hover {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+.login:hover {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+.home-button:hover {
+  color: goldenrod;
+  text-decoration: none;
+}
+
+.create-quiz:hover {
+  color: goldenrod;
+  text-decoration: none;
+}

@@ -1,3 +1,10 @@
+body {
+  font-size: 24px;
+  margin: 0;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: whitesmoke;
+}
+
 .creation-container {
   width: 80%;
   padding: 2rem 1rem;
