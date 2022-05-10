@@ -41,7 +41,10 @@ module.exports = (db) => {
   //this route will get launched when an individual follows a url sent to them as a result of a "share results" action
   router.get("/:quizId/:id", (req, res) => {
     //Get the specified users historic results for the current quiz and pass them into the results page
-    const queryString = `SELECT * FROM attempts WHERE quiz_id = $1 AND user_id = $2 ORDER BY date_taken DESC`;
+    const queryString = `SELECT attempts.*, users.name, quizzes.title FROM attempts
+      JOIN quizzes ON (quiz_id = quizzes.id)
+      JOIN users ON (attempts.user_id = users.id)
+      WHERE quiz_id = $1 AND user_id = $2 ORDER BY date_taken DESC`;
     db.query(queryString, [req.params.quizId, req.params.id])
       .then((results) => {
         if (results.rows.length > 0) {
