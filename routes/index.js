@@ -10,7 +10,8 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT quizzes.*, users.name, count(questions.*) as num_questions FROM quizzes JOIN users ON (quizzes.owner_id = users.id) JOIN questions ON (quizzes.id = questions.quiz_id) GROUP BY quizzes.id, users.id ORDER BY quizzes.id ;`)
+    db.query(`SELECT quizzes.*, users.name, count(questions.*) as num_questions FROM quizzes JOIN users ON (quizzes.owner_id = users.id) JOIN questions ON (quizzes.id = questions.quiz_id) WHERE is_private=false GROUP BY quizzes.id, users.id ORDER BY quizzes.id ;`)
+
       .then(data => {
         const quizzes = data.rows;
 
@@ -18,7 +19,7 @@ module.exports = (db) => {
           .then(stats => {
             console.log("stats", stats.rows)
             const templateVars = {"userId": req.cookies.email, "quizzes": quizzes, "stats": stats.rows};
-           res.render("index", templateVars); //res.json({ users });
+            res.render("index", templateVars);
           })
           .catch((err) => {
             console.log(err);

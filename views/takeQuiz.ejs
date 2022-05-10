@@ -77,6 +77,7 @@
         <div class="quiz-descrip"><%=questions[0].description%></div>
       </div>
       <form method="post">
+
         <div class="questions-container">
           <% for(let question of questions) { %>
           <div class="indiv-question">
@@ -92,8 +93,7 @@
                   name="answer-option-<%=question.question_number%>"
                   value="a"
                 />
-                <label for="option-a">A</label>
-                <div class="option-text"><%=question.question_option_a%></div>
+                <label for="option-a"><%=question.question_option_a%></label>
                 <br />
                 <input
                   type="radio"
@@ -101,10 +101,11 @@
                   name="answer-option-<%=question.question_number%>"
                   value="b"
                 />
-                <label for="option-b">B</label>
-                <div class="option-text"><%=question.question_option_b%></div>
+                <label for="option-b"><%=question.question_option_b%></label>
                 <br />
               </div>
+
+              <% if(question.question_option_c) { %>
               <div class="optc-optd">
                 <input
                   type="radio"
@@ -112,21 +113,26 @@
                   name="answer-option-<%=question.question_number%>"
                   value="c"
                 />
-                <label for="option-c">C</label>
-                <div class="option-text"><%=question.question_option_c%></div>
+                <label for="option-c"><%=question.question_option_c%></label>
                 <br />
+              </div>
+                <% } %>
+
+                <% if(question.question_option_d) { %>
+                <div class="optc-optd">
                 <input
                   type="radio"
                   id="option-d"
                   name="answer-option-<%=question.question_number%>"
                   value="d"
                 />
-                <label for="option-d">D</label>
-                <div class="option-text"><%=question.question_option_d%></div>
-              </div>
+                <label for="option-d"><%=question.question_option_d%></label>
+                </div>
+                <% } %>
+             </div>
             </div>
+            <%}%>
           </div>
-          <%}%>
         </div>
 
         <div class="submit-answers-button">
@@ -138,6 +144,7 @@
             Submit Answers
           </button>
         </div>
+
       </form>
     </div>
   </body>

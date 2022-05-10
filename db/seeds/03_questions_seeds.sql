@@ -35,7 +35,7 @@ VALUES
 (3, 10, 'It was once believed that cutting a cross on the top of your soda bread would let the devil escape from the loaf while it baked.', 'a', 'true', 'false', '', ''),
 (4, 1, 'The technical name For Brewer''s Yeast is saccharomyces.', 'a', 'true', 'false', '', ''),
 (4, 2, 'Guinness is the oldest brewery in the world.', 'b', 'true', 'false', '', ''),
-(4, 3, 'Wort is the liquid extracted from the mashing process during the brewing of beer.', 'b', 'true', 'false', '', ''),
+(4, 3, 'Wort is the liquid extracted from the mashing process during the brewing of beer.', 'a', 'true', 'false', '', ''),
 (4, 4, 'IPA stands for International Pale Ale.', 'b', 'true', 'false', '', ''),
 (4, 5, 'Hops are a great, nutritious treat for dogs.', 'b', 'true', 'false', '', ''),
 (4, 6, 'The German word Hefe means yeast.', 'a', 'true', 'false', '', ''),
