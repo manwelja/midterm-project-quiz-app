@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 
+//Function to insert a new user into the users table when they register
 const createUser = function(userInfo, db) {
   const queryString = `
      INSERT INTO users (name, email, password)
@@ -44,7 +45,6 @@ module.exports = (db) => {
             res.render("error", templateVars);
           }
         }
-
       })
       .catch(err => {
         res
@@ -53,4 +53,4 @@ module.exports = (db) => {
       });
   });
   return router;
-  };
+};

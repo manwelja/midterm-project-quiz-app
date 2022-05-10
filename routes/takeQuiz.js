@@ -19,21 +19,21 @@ module.exports = (db) => {
   });
 
   router.post("/:id", (req, res) => {
-    db.query(`SELECT * FROM questions WHERE quiz_id = $1`, [
+    db.query(`SELECT * FROM questions WHERE quiz_id = $1 ORDER BY question_number`, [
       req.params.id,
     ]).then((data) => {
       let quizId = req.params.id;
-      let count = 0;
       let numCorrect = 0;
       let score = 0;
-      //Put result into the attempt table
-      for (let answer in req.body) {
-        if (data.rows[count].correct_answer === req.body[answer]) {
-          numCorrect += 1;
+      //need to compare each answer to each correct answer by question number in case user didn't fill out all of the fields
+      data.rows.forEach((question) => {
+        if (req.body["answer-option-" + question.question_number]) {
+          if (req.body["answer-option-" + question.question_number] === question.correct_answer) {
+            numCorrect += 1;
+          }
         }
-        count += 1;
-      }
-      score = Math.ceil((numCorrect / count) * 100);
+      });
+      score = Math.ceil((numCorrect / data.rowCount) * 100);
 
       const queryString = `
         SELECT * FROM users WHERE email = $1;

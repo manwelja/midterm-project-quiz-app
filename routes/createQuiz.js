@@ -1,6 +1,27 @@
 const express = require('express');
 const router  = express.Router();
 
+//function to loop through form field and check if there are any incomplete
+const isFormComplete = function(formFields) {
+  for (let key in formFields) {
+    //if the current value is an array, loop through it
+    if (Array.isArray(formFields[key])) {
+      if (key !== "question-c-text" && key !== "question-d-text") {
+
+        for (let i = 0; i < formFields[key].length; i++) {
+          console.log(formFields[key][i])
+          if (formFields[key][i] === "")  return false;
+        }
+      }
+    } else {
+      //if one of the quiz meta data fields are blank, return false and exit
+      if (formFields[key] === '') return false;
+    }
+  }
+  return true;
+};
+
+//function to commit the current quiz nad questions to their respective tables
 const saveQuizToDb = function(quizInfo, db) {
   //STEP 1 - Save quiz META info to quizzes table
   const queryString = `
@@ -74,8 +95,14 @@ module.exports = (db) => {
 
   router.post("/", (req, res) => {
     //call function for error checking here
-    saveQuizToDb(req.body, db);
-    res.redirect("index");
+    if (isFormComplete(req.body)) {
+      saveQuizToDb(req.body, db);
+      res.redirect("index");
+    } else {
+      //if the user doesn't exist, send them to the error page
+      const templateVars = { "userId": req.cookies.email, "errorMessage": "Form submission error: missing field data." };
+      res.render("error", templateVars);
+    }
 
   });
   return router;

@@ -12,15 +12,13 @@ module.exports = (db) => {
       .then(data => {
         //if the user exists, set a cookie and load the index page
         if (data.rows.length > 0) {
-          console.log(req.body)
           res.cookie("email", data.rows[0].email);
-          res.redirect("index");
+          res.redirect("index", 304);
         } else {
           //if the user doesn't exist, send them to the error page
           const templateVars = { "userId": req.cookies.email, "errorMessage": "Invalid username" };
           res.render("error", templateVars);
         }
-
       })
       .catch(err => {
         res
@@ -28,7 +26,6 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-
 
   return router;
 };

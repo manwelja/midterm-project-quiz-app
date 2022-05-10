@@ -13,6 +13,7 @@ module.exports = (db) => {
     db.query(`SELECT quizzes.*, users.name FROM quizzes JOIN users ON (quizzes.owner_id = users.id);`)
       .then(data => {
         const quizzes = data.rows;
+        //pass in the quiz info from the database and the user id (required in nav bar display logic)
         const templateVars = {"userId": req.cookies.email, "quizzes": quizzes};
         res.render("index", templateVars); //res.json({ users });
       })
