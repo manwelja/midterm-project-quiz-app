@@ -13,7 +13,10 @@ module.exports = (db) => {
     db.query(queryString, [req.cookies.email])
       .then((result) => {
         //If no errors were encountered add the new user to the database
-        const queryStringResult = `SELECT * FROM attempts WHERE quiz_id = $1 AND user_id = $2 ORDER BY date_taken DESC`;
+        const queryStringResult = `SELECT attempts.*, users.name, quizzes.title FROM attempts
+           JOIN quizzes ON (quiz_id = quizzes.id)
+           JOIN users ON (attempts.user_id = users.id)
+           WHERE quiz_id = $1 AND user_id = $2 ORDER BY date_taken DESC`;
 
         //Get the users historic results for the current quiz and pass them into the results page
         db.query(queryStringResult, [req.params.quizId, result.rows[0].id])

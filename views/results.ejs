@@ -51,9 +51,9 @@
 
     <div class="results-container">
       <i class="fa-solid fa-trophy" id="trophy"></i>
-      <div class="results-user">Hi User: <%= ownerId %>!</div>
+      <div class="results-user">Quiz Results for: <%= all[0].name %>!</div>
       <div class="results-score">Your Score Is: <%= score %> %</div>
-      <div class="results-quiz-info">For the quiz: [QUIZ TITLE]</div>
+      <div class="results-quiz-info">For the quiz: <%= all[0].title %></div>
       <!-- Maybe we hyperlink to the specific quiz where we mention the name? -->
       <div class="results-previous">
         <div class="results-all-title">
@@ -68,7 +68,21 @@
         </div>
         <% } %>
       </div>
+      <div class="share-quiz-button-email">
+        <a
+          href="mailto:?Subject=Take my Quiz Please&body=http://localhost:8080/results/<%= all[0].quiz_id%>/<%= all[0].user_id%>"
+          >Share </a
+        ><i class="fa-solid fa-share-nodes"></i>
+        <div class="share-quiz-button-reddit">
+          <a
+            href="https://reddit.com/submit?url=http://localhost:8080/results/<%= all[0].quiz_id%>/<%= all[0].user_id%>&title=Quizzy"
+            id="reddit"
+            class="share-btn reddit"
+            ><i class="fa-brands fa-reddit"></i
+          ></a>
+        </div>
     </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
