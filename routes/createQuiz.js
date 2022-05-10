@@ -64,7 +64,7 @@ module.exports = (db) => {
     db.query(queryString, [req.cookies.email])
       .then((result) => {
       //If no errors were encountered add the new user to the database
-        const templateVars = {"ownerId": result.rows[0].id};
+        const templateVars = {"userId": req.cookies.email, "ownerId": result.rows[0].id};
         return res.render("createQuiz", templateVars);
       })
       .catch((err) => {
@@ -74,7 +74,6 @@ module.exports = (db) => {
 
   router.post("/", (req, res) => {
     //call function for error checking here
-
     saveQuizToDb(req.body, db);
     res.redirect("index");
 

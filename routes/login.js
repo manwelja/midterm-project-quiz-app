@@ -3,7 +3,8 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("login");
+    const templateVars = { "userId": req.cookies.email};
+    res.render("login", templateVars);
   });
   //handle when a user clicks login in the login form
   router.post("/", (req, res) => {
@@ -16,7 +17,7 @@ module.exports = (db) => {
           res.redirect("index");
         } else {
           //if the user doesn't exist, send them to the error page
-          const templateVars = { "errorMessage": "Invalid username" };
+          const templateVars = { "userId": req.cookies.email, "errorMessage": "Invalid username" };
           res.render("error", templateVars);
         }
 

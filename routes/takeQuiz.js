@@ -10,7 +10,8 @@ module.exports = (db) => {
     )
       .then((data) => {
         const questions = data.rows;
-        res.render("takeQuiz", { questions: questions }); //res.json({ users });
+        const templateVars = {"userId": req.cookies.email, "questions": questions};
+        res.render("takeQuiz", templateVars); //res.json({ users });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });

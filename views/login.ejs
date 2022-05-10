@@ -46,14 +46,7 @@
 
 
 <body class="home-body">
-  <nav class="nav-bar">
-    <div class="nav-buttons">
-      <div class="home-button">Home</i></div>
-      <div class="create-quiz">Create A Quiz</div>
-    </div>
-    <div class="app-title">Quizzy</div>
-    <div class="user-login-logout">Login/Logout/Register</div>
-  </nav>
+  <%-  include('partials/_navBar'); %>
 
   <main style="margin: 1em;">
     <form class="form-inline" action="/login" method="POST">

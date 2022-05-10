@@ -21,6 +21,7 @@ module.exports = (db) => {
               all: results2.rows,
               score: results2.rows[0].score,
               ownerId: req.cookies.email,
+              userId: req.cookies.email,
             };
             console.log(templateVars);
             return res.render("results", templateVars);

@@ -20,7 +20,8 @@ const createUser = function(userInfo, db) {
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("register");
+    const templateVars = { "userId": req.cookies.email };
+    res.render("register", templateVars);
   });
   //handle when a user clicks register button in the registration form
   router.post("/", (req, res) => {
@@ -29,7 +30,7 @@ module.exports = (db) => {
       .then(data => {
         //check to ensure that all fields are filled out
         if (req.body.name === '' || req.body.email === '' || req.body.password === '') {
-          templateVars = { "errorMessage": "All fields on the registration page must be filled out." };
+          templateVars = { "userId": req.cookies.email, "errorMessage": "All fields on the registration page must be filled out." };
           res.render("error", templateVars);
         } else {
           //if the user email doesn't already exists, set a cookie to log them in, add them to the database and load the index page
@@ -39,7 +40,7 @@ module.exports = (db) => {
             res.redirect("index");
           } else {
             //if the user already exists, send them to the error page
-            templateVars = { "errorMessage": "Invalid username" };
+            templateVars = { "userId": req.cookies.email, "errorMessage": "Invalid username" };
             res.render("error", templateVars);
           }
         }
