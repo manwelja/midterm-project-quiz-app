@@ -35,6 +35,7 @@
 
     <!-- App CSS-->
     <link rel="stylesheet" href="/styles/home.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/results.css" type="text/css" />
 
     <!-- Imported Fonts From Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,13 +53,21 @@
       <div class="app-title">Quizzy</div>
       <div class="user-login-logout">Login/Logout/Register</div>
     </nav>
+
     <div class="results-container">
-      <div class="results-user">Hi User:<%= ownerId %></div>
-      <div class="results-score">YOUR SCORE IS <%= score %> %</div>
-      <div class="results-previous">YOUR RESULTS ARE</div>
-      <% for(let result of all) { %>
-        <div class="results-history"><%= result.date_taken %> : <%= result.score %>%</div>
-      <% } %>
+      <i class="fa-solid fa-trophy" id="trophy"></i>
+      <div class="results-user">Hi User: <%= ownerId %>!</div>
+      <div class="results-score">Your Score Is: <%= score %> %</div>
+      <div class="results-quiz-info">For the quiz: [QUIZ TITLE]</div> <!-- Maybe we hyperlink to the specific quiz where we mention the name? -->
+      <div class="results-previous">
+        <div class="results-all-title">
+          <i class="fa-solid fa-medal" id="medal"></i>
+          <div class="results-all-title-text">HERE ARE ALL OF YOUR RESULTS FOR THIS QUIZ:</div>
+        </div>
+        <% for(let result of all) { %>
+          <div class="results-history"><%= result.date_taken %> : <%= result.score %>%</div>
+        <% } %>
+      </div>
     </div>
 
 
