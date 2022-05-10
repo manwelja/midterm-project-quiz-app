@@ -44,6 +44,7 @@
     <title>Quizzy</title>
   </head>
   <body class="home-body">
+    <%-  include('partials/_navBar'); %>
     <nav class="nav-bar">
       <div class="nav-buttons">
         <div class="home-button">Home</i></div>
@@ -63,7 +64,9 @@
       </div>
         <div class="quiz-description"><%= quiz.description%></div>
         <div class="right-box">
-          <div class="take-quiz-button"><button type="button" id="take-quiz" class="btn btn-outline-primary">Take Quiz <%= quiz.id%></button></div>
+          <form action = "/takeQuiz/<%= quiz.id %>">
+             <div class="take-quiz-button"><button type="submit" id="take-quiz" class="btn btn-outline-primary">Take Quiz <%= quiz.id%></button></div>
+          </form>
           <div class="share-quiz-button">Share <i class="fa-solid fa-share-nodes"></i>
           </div>
         </div>

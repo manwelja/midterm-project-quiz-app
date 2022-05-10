@@ -44,6 +44,7 @@ const createQuizRoutes = require("./routes/createQuiz");
 const takeQuizRoutes = require("./routes/takeQuiz");
 const registerRoutes = require("./routes/register");
 const loginRoutes = require("./routes/login");
+const logoutRoutes = require("./routes/login");
 const errorRoutes = require("./routes/error");
 const resultRoutes = require("./routes/results");
 
@@ -57,6 +58,7 @@ app.use("/createQuiz", createQuizRoutes(db));
 app.use("/takeQuiz", takeQuizRoutes(db));
 app.use("/register", registerRoutes(db));
 app.use("/login", loginRoutes(db));
+app.use("/logout", loginRoutes(db));
 app.use("/error", errorRoutes(db));
 app.use("/results", resultRoutes(db));
 

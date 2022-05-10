@@ -13,7 +13,8 @@ module.exports = (db) => {
     db.query(`SELECT quizzes.*, users.name FROM quizzes JOIN users ON (quizzes.owner_id = users.id);`)
       .then(data => {
         const quizzes = data.rows;
-        res.render("index", {quizzes: quizzes}); //res.json({ users });
+        const templateVars = {"userId": req.cookies.email, "quizzes": quizzes};
+        res.render("index", templateVars); //res.json({ users });
       })
       .catch(err => {
         res
