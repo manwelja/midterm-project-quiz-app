@@ -1,0 +1,65 @@
+.results-container {
+  display: flex;
+  margin-top: 2.7rem;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results-user {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 1.3rem;
+}
+
+.results-score {
+  font-size: 36px;
+  font-weight: 500;
+  border: 2px solid #00b5ac;
+  border-radius: 25px;
+  padding: 1rem;
+}
+
+.results-previous {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  border: 2px solid #808080;
+  border-radius: 25px;
+  padding: 1.2rem 1rem;
+  width: 100%;
+  font-size: 22px;
+}
+
+.results-all-title {
+  display: flex;
+  font-weight: 500;
+  border-bottom: 2px dashed #808080;
+  padding: 0.5rem 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.results-all-title-text {
+  font-size: 22px;
+}
+
+.results-history {
+  margin-top: 1rem;
+}
+
+.results-quiz-info {
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 1.3rem;
+}
+
+#medal {
+  padding: 0.4rem 0.5rem 0rem 0rem;
+}
+
+#trophy {
+  font-size: 28px;
+  margin-bottom: 0.7rem;
+}
