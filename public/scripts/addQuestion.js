@@ -8,7 +8,7 @@ $(document).ready(function () {
       <div class="question-number">Question #${counter}</div>
       <textarea name="question-text" id="question-text" placeholder="Write your question here..."></textarea>
       <select name="correct-answer" id="answer-toggle" placeholder="Correct Answer (A-D)">
-        <option value="choice" disabled selected>Correct Answer (A-D)...</option>
+        <option value="" selected>Select...</option>
         <option value="a">A</option>
         <option value="b">B</option>
         <option value="c">C</option>

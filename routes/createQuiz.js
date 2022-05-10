@@ -15,7 +15,7 @@ const isFormComplete = function(formFields) {
       }
     } else {
       //if one of the quiz meta data fields are blank, return false and exit
-      if (formFields[key] === '') return false;
+      if (formFields[key] === '' && key !== "question-c-text" && key !== "question-d-text") return false;
     }
   }
   return true;
@@ -96,8 +96,10 @@ module.exports = (db) => {
   router.post("/", (req, res) => {
     //call function for error checking here
     if (isFormComplete(req.body)) {
-      saveQuizToDb(req.body, db);
-      res.redirect("index");
+      saveQuizToDb(req.body, db)
+        .then(() =>  {
+          res.redirect("index");
+        })
     } else {
       //if the user doesn't exist, send them to the error page
       const templateVars = { "userId": req.cookies.email, "errorMessage": "Form submission error: missing field data." };
