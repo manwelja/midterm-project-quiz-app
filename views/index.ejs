@@ -70,8 +70,8 @@
             ></a>
           </div>
           <div class="share-copy-clipboard">
-            <a href="#" id="copy-link" class="copy-link"><i class="fa-solid fa-clipboard"></i></a>
-            <div id="shareLink" style="display:none">http://localhost:8080/takeQuiz/<%= quiz.id%></div>
+            <a href="#" id="copy-link" class="copy-link" onclick ="myFunction(<%= quiz.id%>)"><i class="fa-solid fa-clipboard"></i></a>
+            <div id="shareLink" style="display:none" >http://localhost:8080/takeQuiz/<%= quiz.id%></div>
           </div>
         </div>
         <div class="quiz-description"><%= quiz.description%></div>
