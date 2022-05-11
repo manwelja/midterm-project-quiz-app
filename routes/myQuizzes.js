@@ -30,7 +30,6 @@ module.exports = (db) => {
               "userId": req.cookies.email,
               "quizzes": quizzesNstats
             }
-            //console.log(templateVars.quizzes)
             res.render("myQuizzes", templateVars);
           })
           .catch((err) => {

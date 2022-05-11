@@ -17,8 +17,6 @@ module.exports = (db) => {
 
         db.query(`SELECT quiz_id, ROUND(AVG(score)) AS average, COUNT(*) AS attempts FROM attempts GROUP BY quiz_id;`)
           .then(stats => {
-            //console.log("stats", stats.rows);
-            //console.log("quizzes:", quizzes);
             let quizzesNstats = quizzes.map((item) => {
               for (let stat of stats.rows) {
                 if (item.id === stat.quiz_id) {

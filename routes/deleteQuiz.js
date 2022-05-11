@@ -14,7 +14,6 @@ module.exports = (db) => {
     //check to make sure the current user owns the selected quiz by checking the email cookie
     db.query(`SELECT * FROM users WHERE email = $1`, [req.cookies.email])
       .then((user) => {
-        console.log("owner", user.rows[0].id)
         db.query(`DELETE FROM quizzes WHERE id = $1 AND owner_id = $2`, [req.params.id, user.rows[0].id])
           .then(() => {
             res.redirect("../../myQuizzes");
