@@ -26,6 +26,7 @@ module.exports = (db) => {
               }
               return Object.assign({}, item, {"quiz_id": item.id, average: "0", attempts: "0"});
             });
+
             const templateVars = {
               "userId": req.cookies.email,
               "quizzes": quizzesNstats

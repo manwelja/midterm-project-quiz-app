@@ -97,7 +97,7 @@ module.exports = (db) => {
     if (isFormComplete(req.body)) {
       saveQuizToDb(req.body, db)
         .then(() =>  {
-          res.redirect("index");
+          res.redirect("myQuizzes");
         })
     } else {
       //if the user doesn't exist, send them to the error page
