@@ -10,7 +10,8 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT quizzes.*, users.name, count(questions.*) as num_questions FROM quizzes JOIN users ON (quizzes.owner_id = users.id) JOIN questions ON (quizzes.id = questions.quiz_id) WHERE is_private=false GROUP BY quizzes.id, users.id ORDER BY quizzes.id ;`)
+
+    db.query(`SELECT quizzes.*, users.name, count(questions.*) as num_questions FROM quizzes JOIN users ON (quizzes.owner_id = users.id) JOIN questions ON (quizzes.id = questions.quiz_id)  WHERE users.email = $1  GROUP BY quizzes.id, users.id ORDER BY quizzes.id ;`, [req.cookies.email])
 
       .then(data => {
         const quizzes = data.rows;
@@ -23,19 +24,18 @@ module.exports = (db) => {
                   return Object.assign({}, item, stat);
                 }
               }
-              return Object.assign({}, item, {quiz_id: item.id, average: "0", attempts: "0"});
+              return Object.assign({}, item, {"quiz_id": item.id, average: "0", attempts: "0"});
             });
+
             const templateVars = {
               "userId": req.cookies.email,
               "quizzes": quizzesNstats
             }
-            res.render("index", templateVars);
+            res.render("myQuizzes", templateVars);
           })
           .catch((err) => {
             console.log(err);
           });
-        // const templateVars = {"userId": req.cookies.email, "quizzes": quizzes};
-        // res.render("index", templateVars); //res.json({ users });
       })
       .catch(err => {
         res

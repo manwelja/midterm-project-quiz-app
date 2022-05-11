@@ -9,7 +9,6 @@ const isFormComplete = function(formFields) {
       if (key !== "question-c-text" && key !== "question-d-text") {
 
         for (let i = 0; i < formFields[key].length; i++) {
-          console.log(formFields[key][i])
           if (formFields[key][i] === "")  return false;
         }
       }
@@ -98,7 +97,7 @@ module.exports = (db) => {
     if (isFormComplete(req.body)) {
       saveQuizToDb(req.body, db)
         .then(() =>  {
-          res.redirect("index");
+          res.redirect("myQuizzes");
         })
     } else {
       //if the user doesn't exist, send them to the error page

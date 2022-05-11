@@ -47,6 +47,9 @@ const loginRoutes = require("./routes/login");
 const logoutRoutes = require("./routes/logout");
 const errorRoutes = require("./routes/error");
 const resultRoutes = require("./routes/results");
+const myQuizzesRoutes = require("./routes/myQuizzes");
+const deleteQuizRoutes = require("./routes/deleteQuiz");
+const toggleAccessRoutes = require("./routes/toggleAccess");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -61,6 +64,9 @@ app.use("/login", loginRoutes(db));
 app.use("/logout", logoutRoutes(db));
 app.use("/error", errorRoutes(db));
 app.use("/results", resultRoutes(db));
+app.use("/myQuizzes", myQuizzesRoutes(db));
+app.use("/deleteQuiz", deleteQuizRoutes(db));
+app.use("/toggleAccess", toggleAccessRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
