@@ -2,7 +2,7 @@ body {
   font-size: 24px;
   margin: 0;
   font-family: "Roboto Flex", sans-serif;
-  background-color: whitesmoke;
+  background-color: rgb(245,245,245);
 }
 
 /* .nav-bar {
@@ -25,6 +25,9 @@ body {
 .quiz-container {
   width: 80%;
   height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* .logout {
@@ -67,32 +70,49 @@ body {
 }
 
 .quiz-box {
-  margin: 2rem 1rem;
-  display: flex;
-  border-radius: 25px;
-  justify-content: space-between;
-  padding: 0.25rem;
-  border: 2px solid #808080;
+    background: white;
+    width: 30%;
+    height: auto;
+    margin: 2rem 1rem;
+    display: flex;
+    border-radius: 25px;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0,0.15);
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 5%);
+    border-left: solid #00b5ac 3px;
+    border-top: solid #00b5ac 6px;
+    transition: 0.3s;
+}
+
+.quiz-box:hover{
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 20%);
 }
 
 .quiz-description {
-  display: flex;
-  width: 50%;
+  width: 90%;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  font-size: 18px;
+  font-size: 14px;
   align-items: center;
 }
 
 .right-box {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  padding: 0.75rem;
+  align-items: center;
 }
 
 .quiz-image {
-  width: 100px;
+  margin: 0 auto;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border: 3px solid #00b5ac;
 }
 
 .left-box {
@@ -103,7 +123,7 @@ body {
 
 .quiz-name {
   font-weight: 700;
-  font-size: 35px;
+  font-size: 24px;
 }
 
 .quiz-creator {
@@ -121,11 +141,14 @@ body {
   font-weight: 600;
 }
 
+.share-quiz-button-email {
+  display: flex;
+}
+
 .share-btn {
   display: inline-block;
   color: #ff5700;
   border: none;
-  padding: 0.1em 0.6em;
   outline: none;
   text-align: center;
   font-size: 0.9em;
@@ -151,6 +174,19 @@ body {
 .share-button-email {
     color: #00b5ac;
     font-size: 24px;
+}
+
+.btn-outline-primary {
+  color: #00b5ac;
+  background-color: transparent;
+  background-image: none;
+  border-color: #00b5ac;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #00b5ac;
+  border-color: #00b5ac;
 }
 
 /* .register {

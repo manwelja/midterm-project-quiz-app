@@ -56,6 +56,20 @@
           <div class="quiz-creator">Created By: <%= quiz.name%></div>
           <img class="quiz-image" src=<%= quiz.image_url %>>
         </div>
+        <div class="share-quiz-button-email">
+          <a
+            href="mailto:?Subject=Take my Quiz Please&body=http://localhost:8080/takeQuiz/<%= quiz.id%>"
+            ><i class="fa-solid fa-envelope"></i> </a
+          >
+          <div class="share-quiz-button-reddit">
+            <a
+              href="https://reddit.com/submit?url=http://localhost:8080/takeQuiz/<%= quiz.id%>&title=Quizzy"
+              id="reddit"
+              class="share-btn reddit"
+              ><i class="fa-brands fa-reddit"></i
+            ></a>
+          </div>
+        </div>
         <div class="quiz-description"><%= quiz.description%></div>
         <div class="right-box">
           <form action="/takeQuiz/<%= quiz.id %>">
@@ -69,21 +83,6 @@
               </button>
             </div>
           </form>
-          <i class="fa-solid fa-share-nodes"></i>
-          <div class="share-quiz-button-email">
-            <a
-              href="mailto:?Subject=Take my Quiz Please&body=http://localhost:8080/takeQuiz/<%= quiz.id%>"
-              ><i class="fa-solid fa-envelope"></i> </a
-            >
-            <div class="share-quiz-button-reddit">
-              <a
-                href="https://reddit.com/submit?url=http://localhost:8080/takeQuiz/<%= quiz.id%>&title=Quizzy"
-                id="reddit"
-                class="share-btn reddit"
-                ><i class="fa-brands fa-reddit"></i
-              ></a>
-            </div>
-          </div>
         </div>
       </div>
       <% } %>
