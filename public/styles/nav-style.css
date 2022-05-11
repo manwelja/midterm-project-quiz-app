@@ -54,26 +54,26 @@
 }
 
 .register:hover {
-  color: goldenrod;
+  color: #F28500;
   text-decoration: none;
 }
 
 .logout:hover {
-  color: goldenrod;
+  color: #F28500;
   text-decoration: none;
 }
 
 .login:hover {
-  color: goldenrod;
+  color: #F28500;
   text-decoration: none;
 }
 
 .home-button:hover {
-  color: goldenrod;
+  color: #F28500;
   text-decoration: none;
 }
 
 .create-quiz:hover {
-  color: goldenrod;
+  color: #F28500;
   text-decoration: none;
 }

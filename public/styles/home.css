@@ -189,6 +189,16 @@ body {
   border-color: #00b5ac;
 }
 
+.share-box {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.quiz-stats {
+  font-size: 18px;
+}
+
 /* .register {
   color: whitesmoke;
   padding: 0.5rem;
