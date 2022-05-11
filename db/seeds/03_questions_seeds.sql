@@ -62,4 +62,10 @@ VALUES
 (6, 8, 'Canada produces approximately $500M worth of potatoes annually.', 'b', 'true', 'false', '', ''),
 (6, 9, 'Potatoes originally come from Ireland.', 'b', 'true', 'false', '', ''),
 (6, 10, 'The potato was the first vegetable to be grown in space.', 'a', 'true', 'false', '', ''),
-(6, 11, 'The potato skin contains a high level of its nutrients, about 17 % of a its total zinc, 34% of its calcium and 55% of its iron.', 'a', 'true', 'false', '', '');
+(6, 11, 'The potato skin contains a high level of its nutrients, about 17 % of a its total zinc, 34% of its calcium and 55% of its iron.', 'a', 'true', 'false', '', ''),
+(7, 1, 'Which player has the record of 7 Ballon d''ors?', 'c', 'Cristiano Ronaldo', 'Diego Maradona', 'Lionel Messi', 'David Beckham'),
+(7, 2, 'Which team has the most number of Uefa Champions League Titles', 'b', 'Liverpool', 'Real Madrid', 'Bayern Munich', 'Manchester United'),
+(7, 3, 'Which player has the record for most Wordl Cup goals scored?', 'a', 'Miroslav Klose', 'Cristiano Ronaldo', 'Lionel Messi', 'Gary Lineker'),
+(7, 4, 'Brazil has most number of World Cup titles, how many do they have?', 'b', '3', '5', '4', '6'),
+(7, 5, 'In the 2006 World Cup final Zinedine Zidane headbutted which player?', 'd', 'Thierry Henry', 'Andrea Pirlo', 'Fabio Cannavaro', 'Marco Materazzi'),
+(7, 6, 'Which player scored the 4 fastest goals of all time?', 'd', 'Thierry Henry', 'Lionel Messi', 'Robert Lewandowski', 'Sadio Mane');
