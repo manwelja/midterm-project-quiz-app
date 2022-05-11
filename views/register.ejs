@@ -44,47 +44,54 @@
       rel="stylesheet"
     />
 
-    <title>Quizzy</title>
+    <title>Register | Quizzy</title>
   </head>
 
   <body class="home-body">
     <%- include('partials/_navBar'); %>
 
-    <main style="margin: 1em">
+    <main>
       <form class="form-inline" action="/register" method="POST">
         <div class="card-body">
-          <div class="h1 pb-4">Create Account</div>
-          <div class="row justify-content-left pb-2 ml-1">
-            <label for="email">Name:</label>
+
+          <div class="register-title">
+            <div class="register-title-text">Create Account</div>
           </div>
-          <div class="row justify-content-left pb-2 ml-1">
-            <input
-              class="form-control"
-              type="name"
-              name="name"
-              placeholder="Enter name"
-            />
+
+          <div class="name-sect">
+            <label for="name">Name:</label>
+            <div class="account-form">
+              <input
+                class="form-control"
+                type="name"
+                name="name"
+                placeholder="Enter name"
+              />
+            </div>
           </div>
-          <div class="row justify-content-left pb-2 ml-1">
+
+          <div class="email-sect">
             <label for="email">Email Address:</label>
+            <div class="account-form">
+              <input class="form-control " type="email" name="email"
+              placeholder="Enter email">
+            </div>
           </div>
-          <div class="row justify-content-left pb-2 ml-1">
-            <input class="form-control " type="email" name="email"
-            placeholder="Enter email"">
-          </div>
-          <div class="row justify-content-left pb-2 ml-1">
+
+          <div class="password-sect">
             <label for="password">Password:</label>
+            <div class="account-form">
+              <input
+                class="form-control"
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+            </div>
           </div>
-          <div class="row justify-content-left pb-3 ml-1">
-            <input
-              class="form-control"
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
-          </div>
-          <div class="row justify-content-left ml-1">
-            <button type="submit" class="btn btn-primary">Register</button>
+
+          <div class="register-sect">
+            <button type="submit" class="btn btn-primary" id="register-button">Register</button>
           </div>
         </div>
       </form>

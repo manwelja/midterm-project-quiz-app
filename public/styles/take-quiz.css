@@ -78,10 +78,6 @@ body {
   display: flex;
 }
 
-.indiv-question {
-  padding-left: 1rem;
-}
-
 #submit-quiz-answers {
   font-size: 36px;
   padding: 0.7rem 1rem;

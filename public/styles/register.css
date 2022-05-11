@@ -1,0 +1,64 @@
+.card-body {
+  padding: 2rem 1.25rem;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.3rem;
+}
+
+.register-title {
+  font-size: 32px;
+  flex-direction: row;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+}
+
+.register-title-text {
+  font-size: 36px;
+  padding: 0.7rem 1rem;
+  background-color: #00b5ac;
+  color: white;
+  border-color: white;
+  border-radius: 5px;
+}
+
+
+#register-button {
+  font-size: 36px;
+  padding: 0.7rem 1rem;
+  background-color: #00b5ac;
+  color: white;
+  border-color: white;
+}
+
+body {
+  font-size: 24px;
+  margin: 0;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: whitesmoke;
+}
+
+.name-sect {
+  margin-bottom: 1rem;
+}
+
+.email-sect {
+  margin-bottom: 1rem;
+}
+
+.password-sect {
+  margin-bottom: 1rem;
+}
+
+.register-sect {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
