@@ -5,19 +5,31 @@ body {
   background-color: whitesmoke;
 }
 
+.q-container {
+  padding-top: 2rem;
+}
+
+
 .top-container {
   display: flex;
   flex-direction: column;
-  border: 2px solid;
   padding: 1rem;
   align-items: center;
   width: 80%;
+  background: #00b5ac;
+  height: auto;
+  margin: 1rem 0rem;
+  border-radius: 25px;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 5%);
+  transition: 0.3s;
+  border: double 8px whitesmoke;
+  color: whitesmoke;
 }
 
 .questions-container {
-  border: 2px solid;
-  width: 80vw;
-  margin-top: 2rem;
+  width: 100%;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -30,24 +42,33 @@ body {
 }
 
 .indiv-question {
-  display: flex;
-  border: 2px solid;
-  margin: 0.5rem;
   flex-direction: column;
+  background: white;
+  height: auto;
+  margin: 1rem 0rem;
+  display: flex;
+  border-radius: 25px;
+  padding: 1rem;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 5%);
+  border-left: solid #00b5ac 3px;
+  border-top: solid #00b5ac 6px;
+  transition: 0.3s;
 }
 
 .answer-select {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .opta-optb {
-  padding-left: 3rem;
+  padding: 0.5rem 3rem;
 }
 
 .optc-optd {
-  padding-right: 10rem;
+  padding: 0.5rem 3rem;
 }
 
 .submit-answers-button {
@@ -62,14 +83,53 @@ body {
 }
 
 #submit-quiz-answers {
-  font-size: 30px;
+  font-size: 36px;
+  padding: 0.7rem 1rem;
+  background-color: #00b5ac;
+  color: white;
+  border-color: white;
+}
+
+#submit-quiz-answers:hover{
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 20%);
 }
 
 .option-text {
   font-size: 18px;
 }
 
+.question-numb {
+  font-weight: 600;
+}
+.question-descrip {
+  border-bottom: 1px solid;
+}
+
 .answer-select label {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
+}
+
+form {
+  width: 80%;
+}
+
+.take-quiz-callout {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.quiz-title {
+  font-weight: 500;
+  font-size: 32px;
+}
+
+.quiz-descrip {
+  font-weight: 400;
+  text-align: justify;
+  padding: 1rem 2rem;
+}
+
+.indiv-question:hover{
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 20%);
 }

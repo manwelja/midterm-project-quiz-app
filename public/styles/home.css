@@ -5,23 +5,6 @@ body {
   background-color: rgb(245,245,245);
 }
 
-/* .nav-bar {
-  background-color: #00b5ac;
-  height: 120px;
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  color: whitesmoke;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-}
-
-.nav-buttons {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-} */
-
 .quiz-container {
   width: 80%;
   height: 100vh;
@@ -29,29 +12,6 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
-/* .logout {
-  color: whitesmoke;
-  padding: 0.5rem;
-}
-
-.app-title {
-  padding-top: 1.2rem;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 50px;
-}
-
-.home-button {
-  padding: 1rem;
-  color: whitesmoke;
-}
-
-.user-login-logout {
-  display: flex;
-  align-items: center;
-  padding: 1rem 2rem 1rem 1rem;
-} */
 
 .create-quiz {
   padding: 1rem;
@@ -198,40 +158,3 @@ body {
 .quiz-stats {
   font-size: 18px;
 }
-
-/* .register {
-  color: whitesmoke;
-  padding: 0.5rem;
-}
-
-.register:hover {
-  color: goldenrod;
-  text-decoration: none;
-}
-
-.logout:hover {
-  color: goldenrod;
-  text-decoration: none;
-}
-
-.home-button:hover {
-  color: goldenrod;
-  text-decoration: none;
-}
-
-.create-quiz:hover {
-  color: goldenrod;
-  text-decoration: none;
-} */
-/*.share-btn.reddit      { background: #FFFFFF; }*/
-
-/* I couldn't figure out how to change the take-quiz button from bootstrap haha */
-
-/* .btn #take-quiz{
-  color: #00b5ac;
-  border-color: #00b5ac;
-  font-size: 18px;
-  font-weight: 600;
-} */
-
-/* //btn-outline-primary */ ;

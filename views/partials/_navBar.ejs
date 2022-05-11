@@ -5,15 +5,14 @@
     <a class="create-quiz" href="/createQuiz">Create a Quiz</a>
   </div>
   <div class="app-title">Quizzy</div>
-  <div class="user-login-logout">
+  <div class="user-logout">
     <a class="logout" href="/logout"> Logout </a>
-    <a class="register" href="/register"> Register </a>
   </div>
   <% } %> <% if(!userId) { %>
   <div class="nav-buttons">
     <a class="home-button" href="/index">Home</a>
   </div>
-  <div class="app-title">Quizzy</div>
+  <div class="app-title" id="loggedout">Quizzy</div>
   <div class="user-login-logout">
     <a class="login" href="/login"> Login  </a>
     <a class="register" href="/register"> Register </a>
