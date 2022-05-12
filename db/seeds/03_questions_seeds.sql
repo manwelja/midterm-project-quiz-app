@@ -68,4 +68,7 @@ VALUES
 (7, 3, 'Which player has the record for most World Cup goals scored?', 'a', 'Miroslav Klose', 'Cristiano Ronaldo', 'Lionel Messi', 'Gary Lineker'),
 (7, 4, 'Brazil has most number of World Cup titles, how many do they have?', 'b', '3', '5', '4', '6'),
 (7, 5, 'In the 2006 World Cup final Zinedine Zidane headbutted which player?', 'd', 'Thierry Henry', 'Andrea Pirlo', 'Fabio Cannavaro', 'Marco Materazzi'),
-(7, 6, 'Which player scored the 4 fastest goals of all time?', 'c', 'Thierry Henry', 'Lionel Messi', 'Robert Lewandowski', 'Sadio Mane');
+(7, 6, 'Which player scored the 4 fastest goals of all time?', 'c', 'Thierry Henry', 'Lionel Messi', 'Robert Lewandowski', 'Sadio Mane'),
+(8, 1, 'This project was a great opportunity for us to get out of our comfort zones and practice pair programming. It also helped us ensure that the app flowed and that the front and back ends connected together well.', 'a', 'true', 'false', 'potato', 'depends'),
+(8, 2, 'We ran into an issue with the incrementation of our primary key in our database, which turned out to be an issue with how we were seeding the tables. We reached out and a mentor, who helped us debug it - this helped solidify our knowledge of database design.', 'a', 'true', 'false', 'potato', 'depends'),
+(8, 3, 'We all became more comfortable with git workflows and branches.', 'a', 'true', 'false', 'potato', 'depends');
