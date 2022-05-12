@@ -4,3 +4,7 @@ body {
   font-family: "Roboto Flex", sans-serif;
   background-color: whitesmoke;
 }
+
+.card-body {
+  margin-top: 140px;
+}
