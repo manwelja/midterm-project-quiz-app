@@ -68,4 +68,4 @@ VALUES
 (7, 3, 'Which player has the record for most World Cup goals scored?', 'a', 'Miroslav Klose', 'Cristiano Ronaldo', 'Lionel Messi', 'Gary Lineker'),
 (7, 4, 'Brazil has most number of World Cup titles, how many do they have?', 'b', '3', '5', '4', '6'),
 (7, 5, 'In the 2006 World Cup final Zinedine Zidane headbutted which player?', 'd', 'Thierry Henry', 'Andrea Pirlo', 'Fabio Cannavaro', 'Marco Materazzi'),
-(7, 6, 'Which player scored the 4 fastest goals of all time?', 'd', 'Thierry Henry', 'Lionel Messi', 'Robert Lewandowski', 'Sadio Mane');
+(7, 6, 'Which player scored the 4 fastest goals of all time?', 'c', 'Thierry Henry', 'Lionel Messi', 'Robert Lewandowski', 'Sadio Mane');
