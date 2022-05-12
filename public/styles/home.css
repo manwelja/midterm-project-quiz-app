@@ -203,3 +203,15 @@ body {
   font-weight: 400;
   padding-left: 2rem;
  }
+
+ .avg-score-easy {
+  color: green;
+ }
+
+ .avg-score-medium {
+  color: #ffcc00;
+ }
+
+ .avg-score-hard {
+   color: red
+ }

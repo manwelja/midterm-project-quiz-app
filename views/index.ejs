@@ -75,7 +75,18 @@
           <div class="quiz-creator">Created By: <%= quiz.name%></div>
           <img class="quiz-image" src=<%= quiz.image_url %>>
         </div>
-        <div class="quiz-stats">Quiz Attempts: <%=quiz.attempts%> Average Score: <%=quiz.average%></div>
+        <div class="quiz-stats">
+          <div class="quiz-attempts">Quiz Attempts: <%=quiz.attempts%></div>
+          <% if(quiz.average < 50 ){ %>
+          <div class="avg-score-hard">&nbsp;Average Score: <strong><%=quiz.average%></strong></div>
+          <% } %>
+          <% if(quiz.average >= 50 && quiz.average < 75){ %>
+            <div class="avg-score-medium">&nbsp;Average Score: <strong><%=quiz.average%></strong></div>
+            <% } %>
+            <% if(quiz.average >= 75){ %>
+              <div class="avg-score-easy">&nbsp;Average Score: <strong><%=quiz.average%></strong></div>
+              <% } %>
+        </div>
         <div class="quiz-description"><%= quiz.description%></div>
         <div class="right-box">
           <form action="/takeQuiz/<%= quiz.id %>">
