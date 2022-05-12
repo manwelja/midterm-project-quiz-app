@@ -25,6 +25,7 @@ body {
   transition: 0.3s;
   border: double 8px whitesmoke;
   color: whitesmoke;
+  margin-top: 140px;
 }
 
 .questions-container {
