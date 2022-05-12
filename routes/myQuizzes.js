@@ -14,7 +14,15 @@ module.exports = (db) => {
     db.query(`SELECT quizzes.*, users.name, count(questions.*) as num_questions FROM quizzes JOIN users ON (quizzes.owner_id = users.id) JOIN questions ON (quizzes.id = questions.quiz_id)  WHERE users.email = $1  GROUP BY quizzes.id, users.id ORDER BY quizzes.id ;`, [req.cookies.email])
 
       .then(data => {
-        const quizzes = data.rows;
+        let quizzes = [];
+        if (data.rows.length === 0) {
+          res.redirect("index");
+        } else
+        {
+          quizzes = data.rows;
+        }
+
+
 
         db.query(`SELECT quiz_id, ROUND(AVG(score)) AS average, COUNT(*) AS attempts FROM attempts GROUP BY quiz_id;`)
           .then(stats => {

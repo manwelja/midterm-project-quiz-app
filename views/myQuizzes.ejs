@@ -48,10 +48,10 @@
   </head>
   <body class="home-body">
     <%- include('partials/_navBar'); %>
-    <div>Quizzes by <%= quizzes[0].name%></div>
+    <div class="title-container"><div class="my-quiz-title">Quizzes by <%= quizzes[0].name%></div></div>
     <div class="quiz-container">
       <% for(let quiz of quizzes) { %>
-      <div class="quiz-box">
+      <div class="quiz-box" id="my-quiz-box">
         <div class="share-box">
           <div class="share-quiz-button-email">
             <a
@@ -78,7 +78,7 @@
         </div>
         <div class="quiz-stats">Quiz Attempts: <%=quiz.attempts%> Average Score: <%=quiz.average%></div>
         <div class="quiz-description"><%= quiz.description%></div>
-        <div class="right-box">
+        <div class="my-quiz-right-box">
           <form action="/takeQuiz/<%= quiz.id %>">
             <div class="take-quiz-button">
               <button type="submit" id="take-quiz" class="btn btn-outline-primary">

@@ -68,11 +68,13 @@
         </div>
         <% } %>
       </div>
-      <i class="fa-solid fa-share-nodes"></i>
+
+     <div class="share-box">
       <div class="share-quiz-button-email">
         <a
           href="mailto:?Subject=Take my Quiz Please&body=http://localhost:8080/results/<%= all[0].quiz_id%>/<%= all[0].user_id%>"
-          ><i class="fa-solid fa-envelope"></i></a>
+          ><i class="fa-solid fa-envelope"></i> </a
+        >
         <div class="share-quiz-button-reddit">
           <a
             href="https://reddit.com/submit?url=http://localhost:8080/results/<%= all[0].quiz_id%>/<%= all[0].user_id%>&title=Quizzy"
@@ -82,11 +84,11 @@
           ></a>
         </div>
         <div class="share-copy-clipboard">
-          <a href="#" id="copy-link" class="copy-link"><i class="fa-solid fa-clipboard"></i></a>
-          <div id="shareLink" style="display:none">http://localhost:8080/results/<%= all[0].quiz_id%>/<%= all[0].user_id%></div>
+          <a href="#" id="copy-link" class="copy-link" onclick ="copyResultsLink(<%= all[0].quiz_id %>, <%= all[0].user_id %>)"><i class="fa-solid fa-clipboard"></i></a>
         </div>
+      </div>
     </div>
-
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
