@@ -14,7 +14,7 @@
 .nav-buttons {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0px;
 }
 
 .logout {
@@ -29,16 +29,11 @@
 
 .app-title {
   font-weight: 900;
-  margin: 0px 450px 0px 265px;
+  /* margin: 0px 450px 0px 265px; */
   font-family: "Montserrat", sans-serif;
   font-size: 60px;
   align-self: center;
-}
-
-#loggedout {
-  display: flex;
-  margin: 0px 300px 0px 420px;
-
+  margin-right: 300px;
 }
 
 .home-button {
@@ -79,23 +74,32 @@
 .logout:hover {
   color: #027bff;
   text-decoration: none;
-  font-weight: 600;
 }
 
 .login:hover {
   color: #027bff;
   text-decoration: none;
-  font-weight: 600;
 }
 
 .home-button:hover {
   color: #027bff;
   text-decoration: none;
-  font-weight: 600;
 }
 
 .create-quiz:hover {
   color: #027bff;
   text-decoration: none;
-  font-weight: 600;
+}
+
+#nav-loggedout {
+  margin-left: 2rem;
+}
+
+#nav-login-logout {
+  margin-right: 2rem;
+}
+
+#loggedout {
+  display: flex;
+  margin: 0px 0px 0px 150px;
 }

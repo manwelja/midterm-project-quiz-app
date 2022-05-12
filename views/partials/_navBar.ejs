@@ -10,11 +10,11 @@
     <a class="logout" href="/logout"> Logout </a>
   </div>
   <% } %> <% if(!userId) { %>
-  <div class="nav-buttons">
+  <div class="nav-buttons" id="nav-loggedout">
     <a class="home-button" href="/index">Home</a>
   </div>
   <div class="app-title" id="loggedout">Quizzy</div>
-  <div class="user-login-logout">
+  <div class="user-login-logout" id="nav-login-logout">
     <a class="login" href="/login"> Login  </a>
     <a class="register" href="/register"> Register </a>
   </div>
